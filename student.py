@@ -72,3 +72,10 @@ class Student(Person):
 
             print(f"Average Grade: {self.calculate_average():.2f}")
 
+ # Method overriding
+    def display_info(self):
+        print("\n===== Student Information =====")
+        print(f"Name: {self.get_name()}")
+        print(f"Age: {self.get_age()}")
+        print(f"Student ID: {self.__student_id}")
+        print(f"Enrolled Courses: {len(self.__courses)}")
