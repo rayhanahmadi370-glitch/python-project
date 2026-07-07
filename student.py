@@ -39,3 +39,16 @@ class Student(Person):
                 print("Grade must be between 0 and 100.")
         else:
             print("Student is not enrolled in this course.")
+
+ # Calculate average grade
+    def calculate_average(self):
+        grades = []
+
+        for grade in self.__courses.values():
+            if grade is not None:
+                grades.append(grade)
+
+        if len(grades) == 0:
+            return 0
+
+        return sum(grades) / len(grades)
