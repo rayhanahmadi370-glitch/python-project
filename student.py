@@ -28,3 +28,14 @@ class Student(Person):
             print(f"Removed {course_name}.")
         else:
             print("Course not found.")
+
+  # Add or update a grade
+    def add_grade(self, course_name, grade):
+        if course_name in self.__courses:
+            if 0 <= grade <= 100:
+                self.__courses[course_name] = grade
+                print("Grade added successfully.")
+            else:
+                print("Grade must be between 0 and 100.")
+        else:
+            print("Student is not enrolled in this course.")
