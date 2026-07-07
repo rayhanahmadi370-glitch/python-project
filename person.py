@@ -19,3 +19,7 @@ class Person:
         else:
             print("Age must be greater than 0.")
 
+    # Display method
+    def display_info(self):
+        print(f"Name: {self.__name}")
+        print(f"Age: {self.__age}")
