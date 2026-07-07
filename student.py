@@ -52,3 +52,23 @@ class Student(Person):
             return 0
 
         return sum(grades) / len(grades)
+
+
+    # Display all courses and grades
+    def display_report(self):
+        print("\n===== Student Report =====")
+        print(f"Name: {self.get_name()}")
+        print(f"Student ID: {self.__student_id}")
+
+        if len(self.__courses) == 0:
+            print("No courses enrolled.")
+        else:
+            print("Courses:")
+            for course, grade in self.__courses.items():
+                if grade is None:
+                    print(f"  {course}: No grade")
+                else:
+                    print(f"  {course}: {grade}")
+
+            print(f"Average Grade: {self.calculate_average():.2f}")
+
