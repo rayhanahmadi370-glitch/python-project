@@ -21,3 +21,10 @@ class Student(Person):
         else:
             print("Student is already enrolled in this course.")
 
+    # Remove a course
+    def remove_course(self, course_name):
+        if course_name in self.__courses:
+            del self.__courses[course_name]
+            print(f"Removed {course_name}.")
+        else:
+            print("Course not found.")
