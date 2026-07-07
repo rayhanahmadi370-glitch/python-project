@@ -23,3 +23,14 @@ class Course:
 
     def set_instructor(self, instructor):
         self.__instructor = instructor
+
+    # Display course information
+    def display_course(self):
+        print("\n===== Course Information =====")
+        print(f"Course Name : {self.__course_name}")
+        print(f"Course Code : {self.__course_code}")
+        print(f"Instructor  : {self.__instructor}")
+
+    # String representation
+    def __str__(self):
+        return f"{self.__course_code} - {self.__course_name}"
