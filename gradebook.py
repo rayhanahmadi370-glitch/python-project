@@ -54,3 +54,29 @@ class Gradebook:
         for student in self.__students:
             student.display_info()
             print("-" * 30)
+
+
+    # Course Methods
+    def add_course(self, course):
+        for c in self.__courses:
+            if c.get_course_code() == course.get_course_code():
+                print("Course code already exists.")
+                return
+
+        self.__courses.append(course)
+        print("Course added successfully.")
+
+    def find_course(self, course_code):
+        for course in self.__courses:
+            if course.get_course_code() == course_code:
+                return course
+        return None
+
+    def display_all_courses(self):
+        if len(self.__courses) == 0:
+            print("No courses available.")
+            return
+
+        for course in self.__courses:
+            course.display_course()
+            print("-" * 30)
