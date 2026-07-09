@@ -80,3 +80,32 @@ class Gradebook:
         for course in self.__courses:
             course.display_course()
             print("-" * 30)
+
+ # Enrollment & Grades
+    def enroll_student(self, student_id, course_code):
+        student = self.find_student(student_id)
+        course = self.find_course(course_code)
+
+        if student is None:
+            print("Student not found.")
+            return
+
+        if course is None:
+            print("Course not found.")
+            return
+
+        student.enroll_course(course.get_course_name())
+
+    def assign_grade(self, student_id, course_code, grade):
+        student = self.find_student(student_id)
+        course = self.find_course(course_code)
+
+        if student is None:
+            print("Student not found.")
+            return
+
+        if course is None:
+            print("Course not found.")
+            return
+
+        student.add_grade(course.get_course_name(), grade)
