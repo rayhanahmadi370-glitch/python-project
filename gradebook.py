@@ -109,3 +109,57 @@ class Gradebook:
             return
 
         student.add_grade(course.get_course_name(), grade)
+
+# Reports
+
+    def show_student_report(self, student_id):
+        student = self.find_student(student_id)
+
+        if student is None:
+            print("Student not found.")
+            return
+
+        student.display_report()
+
+    def show_all_reports(self):
+        if len(self.__students) == 0:
+            print("No students available.")
+            return
+
+        for student in self.__students:
+            student.display_report()
+            print("=" * 40)
+
+    def class_average(self):
+        averages = []
+
+        for student in self.__students:
+            avg = student.calculate_average()
+            if avg > 0:
+                averages.append(avg)
+
+        if len(averages) == 0:
+            print("No grades available.")
+            return
+
+        print(f"Class Average: {sum(averages) / len(averages):.2f}")
+
+    def display_top_student(self):
+        top_student = None
+        highest_average = -1
+
+        for student in self.__students:
+            avg = student.calculate_average()
+
+            if avg > highest_average:
+                highest_average = avg
+                top_student = student
+
+        if top_student is None or highest_average == 0:
+            print("No grades available.")
+            return
+
+        print("\n===== Top Student =====")
+        print(f"Name: {top_student.get_name()}")
+        print(f"Student ID: {top_student.get_student_id()}")
+        print(f"Average Grade: {highest_average:.2f}")
