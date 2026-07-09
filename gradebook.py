@@ -24,3 +24,33 @@ class Gradebook:
                 return
 
         print("Student not found.")
+
+    def find_student(self, student_id):
+        for student in self.__students:
+            if student.get_student_id() == student_id:
+                return student
+        return None
+
+    def display_all_students(self):
+        if len(self.__students) == 0:
+            print("No students found.")
+            return
+
+        for student in self.__students:
+            student.display_info()
+            print("-" * 30)
+
+    def find_student(self, student_id):
+        for student in self.__students:
+            if student.get_student_id() == student_id:
+                return student
+        return None
+
+    def display_all_students(self):
+        if len(self.__students) == 0:
+            print("No students found.")
+            return
+
+        for student in self.__students:
+            student.display_info()
+            print("-" * 30)
