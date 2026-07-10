@@ -4,10 +4,10 @@ class Person:
         self.__age = age
 
      # Getters
-        def get_name(self):
+    def get_name(self):
             return self.__name
 
-        def get_age(self):
+    def get_age(self):
             return self.__age
  # Setters
     def set_name(self, name):
